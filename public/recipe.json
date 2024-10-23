@@ -1,0 +1,106 @@
+[
+ {
+  "recipe_id": "1",
+  "recipe_name": "Chick-Fil-A Sandwich",
+  "short_description": "A deliciously crispy chicken sandwich with pickles and mayo.",
+  "image": "https://www.themealdb.com/images/media/meals/sbx7n71587673021.jpg",
+  "ingredients": [
+   "2 boneless chicken breasts",
+   "1 cup buttermilk",
+   "1 cup all-purpose flour",
+   "1 tablespoon paprika",
+   "1 tablespoon cayenne pepper",
+   "4 sandwich buns",
+   "Pickles",
+   "Mayonnaise"
+  ],
+  "preparing_time": "30 min",
+  "calories": "500 calories"
+ },
+ {
+  "recipe_id": "2",
+  "recipe_name": "Chicken Couscous",
+  "short_description": "A flavorful dish combining chicken and fluffy couscous with spices.",
+  "image": "https://www.themealdb.com/images/media/meals/qxytrx1511304021.jpg",
+  "ingredients": [
+   "500 g chicken breast",
+   "200 g couscous",
+   "400 ml chicken broth",
+   "1 onion",
+   "2 carrots",
+   "1 bell pepper",
+   "Olive oil",
+   "Spices"
+  ],
+  "preparing_time": "25 min",
+  "calories": "350 calories"
+ },
+ {
+  "recipe_id": "3",
+  "recipe_name": "Chicken Fajita Mac and Cheese",
+  "short_description": "A cheesy twist on classic mac and cheese with fajita chicken.",
+  "image": "https://www.themealdb.com/images/media/meals/qrqywr1503066605.jpg",
+  "ingredients": [
+   "300 g macaroni",
+   "200 g chicken breast",
+   "1 bell pepper",
+   "1 onion",
+   "200 g cheddar cheese",
+   "300 ml milk",
+   "Spices"
+  ],
+  "preparing_time": "40 min",
+  "calories": "600 calories"
+ },
+ {
+  "recipe_id": "4",
+  "recipe_name": "General Tso's Chicken",
+  "short_description": "A popular Chinese dish featuring crispy chicken in a sweet and spicy sauce.",
+  "image": "https://www.themealdb.com/images/media/meals/1529444113.jpg",
+  "ingredients": [
+   "500 g chicken thighs",
+   "1 tablespoon soy sauce",
+   "1 tablespoon rice vinegar",
+   "2 tablespoons cornstarch",
+   "1 tablespoon sugar",
+   "Garlic",
+   "Ginger",
+   "Green onions"
+  ],
+  "preparing_time": "30 min",
+  "calories": "700 calories"
+ },
+ {
+  "recipe_id": "5",
+  "recipe_name": "Katsu Chicken Curry",
+  "short_description": "Crispy chicken served with a rich and flavorful curry sauce.",
+  "image": "https://www.themealdb.com/images/media/meals/vwrpps1503068729.jpg",
+  "ingredients": [
+   "400 g chicken breast",
+   "1 cup panko breadcrumbs",
+   "2 potatoes",
+   "1 carrot",
+   "1 onion",
+   "500 ml chicken stock",
+   "Curry powder"
+  ],
+  "preparing_time": "45 min",
+  "calories": "650 calories"
+ },
+ {
+  "recipe_id": "6",
+  "recipe_name": "Chicken Teriyaki",
+  "short_description": "A classic Japanese dish featuring grilled chicken glazed with a sweet teriyaki sauce.",
+  "image": "https://i.ibb.co.com/jVmzcj6/Chicken-Teriyaki-Bowl-Recipe.webp",
+  "ingredients": [
+   "500 g chicken thighs",
+   "100 ml soy sauce",
+   "50 ml mirin",
+   "2 tablespoons sugar",
+   "Sesame seeds",
+   "Green onions"
+  ],
+  "preparing_time": "35 min",
+  "calories": "450 calories"
+ }
+]

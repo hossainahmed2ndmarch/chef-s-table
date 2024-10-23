@@ -5,7 +5,7 @@ import kitchenImage from "../../assets/kitchen.jpg";
 
 const Header = () => {
   return (
-    <div className="mt-6 px-6">
+    <header className="mt-6 px-6">
       {/* Navbar */}
       <nav className="mb-12">
         <div className="navbar bg-base-100">
@@ -98,7 +98,7 @@ const Header = () => {
           </div>
         </div>
       </section>
-    </div>
+    </header>
   );
 };
 
