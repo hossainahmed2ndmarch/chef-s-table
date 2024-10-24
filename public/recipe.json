@@ -14,8 +14,8 @@
    "Pickles",
    "Mayonnaise"
   ],
-  "preparing_time": "30 min",
-  "calories": "500 calories"
+  "preparing_time": 30,
+  "calories": 500
  },
  {
   "recipe_id": "2",
@@ -32,8 +32,8 @@
    "Olive oil",
    "Spices"
   ],
-  "preparing_time": "25 min",
-  "calories": "350 calories"
+  "preparing_time": 25,
+  "calories": 350
  },
  {
   "recipe_id": "3",
@@ -49,8 +49,8 @@
    "300 ml milk",
    "Spices"
   ],
-  "preparing_time": "40 min",
-  "calories": "600 calories"
+  "preparing_time": 40,
+  "calories": 600
  },
  {
   "recipe_id": "4",
@@ -67,8 +67,8 @@
    "Ginger",
    "Green onions"
   ],
-  "preparing_time": "30 min",
-  "calories": "700 calories"
+  "preparing_time": 30,
+  "calories": 700
  },
  {
   "recipe_id": "5",
@@ -84,8 +84,8 @@
    "500 ml chicken stock",
    "Curry powder"
   ],
-  "preparing_time": "45 min",
-  "calories": "650 calories"
+  "preparing_time": 45,
+  "calories": 650
  },
  {
   "recipe_id": "6",
@@ -100,7 +100,7 @@
    "Sesame seeds",
    "Green onions"
   ],
-  "preparing_time": "35 min",
-  "calories": "450 calories"
+  "preparing_time": 35,
+  "calories": 450
  }
 ]

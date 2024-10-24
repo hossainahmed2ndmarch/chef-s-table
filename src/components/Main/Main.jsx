@@ -4,14 +4,33 @@ import Sidebar from "../Sidebar/Sidebar";
 
 const Main = () => {
   const [recipeQueue, setRecipeQueue] = useState([]);
+  const [preparedRecipe, setPreparedRecipe] = useState([]);
+  const [totalTime, setTotalTime] = useState(0);
+  const [totalCalories, setTotalCalories] = useState(0);
+  // Add recipe
   const addRecipeQueue = (recipe) => {
-   const isExist = recipeQueue.find(existedRecipe=> existedRecipe.recipe_id === recipe.recipe_id)
-   if(!isExist){
-    setRecipeQueue([...recipeQueue, recipe]);
-   }
-   else{
-    alert('This recipe already exists in the queue')
-   }
+    const isExist = recipeQueue.find(
+      (existedRecipe) => existedRecipe.recipe_id === recipe.recipe_id
+    );
+    if (!isExist) {
+      setRecipeQueue([...recipeQueue, recipe]);
+    } else {
+      alert("This recipe already exists in the queue");
+    }
+  };
+  // Prepared recipe
+  const handleRemoveRecipe = (id) => {
+    const removedRecipe = recipeQueue.find((recipe) => recipe.recipe_id === id);
+    const updatedQueue = recipeQueue.filter(
+      (recipe) => recipe.recipe_id !== id
+    );
+    setPreparedRecipe([...preparedRecipe, removedRecipe]);
+    setRecipeQueue(updatedQueue);
+  };
+  // Total time calories
+  const calculateTotalTimeCalories = (time, calories) => {
+    setTotalTime(totalTime + time);
+    setTotalCalories(totalCalories + calories);
   };
   return (
     <div className="px-6 mb-24">
@@ -29,7 +48,14 @@ const Main = () => {
         {/* Recipes Card */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <Recipes addRecipeQueue={addRecipeQueue}></Recipes>
-          <Sidebar recipeQueue={recipeQueue}></Sidebar>
+          <Sidebar
+            recipeQueue={recipeQueue}
+            handleRemoveRecipe={handleRemoveRecipe}
+            preparedRecipe={preparedRecipe}
+            calculateTotalTimeCalories={calculateTotalTimeCalories}
+            totalTime={totalTime}
+            totalCalories={totalCalories}
+          ></Sidebar>
         </div>
       </section>
     </div>

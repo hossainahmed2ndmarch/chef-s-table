@@ -1,9 +1,15 @@
 import PropTypes from "prop-types";
 
-const Sidebar = ({ recipeQueue }) => {
-  console.log(recipeQueue);
+const Sidebar = ({
+  recipeQueue,
+  handleRemoveRecipe,
+  preparedRecipe,
+  calculateTotalTimeCalories,
+  totalTime,
+  totalCalories,
+}) => {
   return (
-    <div className="border border-[#28282833] rounded-2xl">
+    <div className="border border-[#28282833] rounded-2xl space-y-8">
       <h5 className="text-2xl text-[#282828] font-semibold text-center mt-8">
         Want to cook: {recipeQueue.length}
       </h5>
@@ -24,10 +30,19 @@ const Sidebar = ({ recipeQueue }) => {
               <tr key={index} className="hover text-[#878787]">
                 <th>{index + 1}</th>
                 <td>{item.recipe_name}</td>
-                <td>{item.preparing_time}</td>
-                <td>{item.calories}</td>
+                <td>{item.preparing_time} minutes</td>
+                <td>{item.calories} calories</td>
                 <td>
-                  <button className="btn bg-[#0BE58A] border-none text-[#150B2B] text-lg font-semibold px-2 py-1 md:px-6 md:py-2  rounded-[50px]">
+                  <button
+                    onClick={() => {
+                      handleRemoveRecipe(item.recipe_id),
+                        calculateTotalTimeCalories(
+                          item.preparing_time,
+                          item.calories
+                        );
+                    }}
+                    className="btn bg-[#0BE58A] border-none text-[#150B2B] text-lg font-medium px-2 py-1 md:px-4 md:py-2  rounded-[50px]"
+                  >
                     Preparing
                   </button>
                 </td>
@@ -37,24 +52,37 @@ const Sidebar = ({ recipeQueue }) => {
         </table>
       </div>
       <h5 className="text-2xl text-[#282828] font-semibold text-center mt-8">
-        Currently cooking: 02
+        Currently cooking: {preparedRecipe.length}
       </h5>
       <div className="divider mx-16"></div>
-      <div className="grid grid-cols-3 gap-6 p-6">
-        <div className="space-y-4">
-          <p className="text-[#878787]">Name</p>
-          <li className="text-[#878787] list-decimal">Chicken Caesar Salad</li>
-        </div>
-        <div className="space-y-4">
-          <p className="text-[#878787]">Time</p>
-          <li className="text-[#878787] list-none">20 minutes</li>
-          <p className="text-[#878787]">Total Time = 45 minutes</p>
-        </div>
-        <div className="space-y-4">
-          <p className="text-[#878787]">Calories</p>
-          <li className="text-[#878787] list-none">400 calories</li>
-          <p className="text-[#878787]">Total Calories = 1050 calories</p>
-        </div>
+      <div className="overflow-x-auto">
+        <table className="table">
+          {/* head */}
+          <thead>
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Time</th>
+              <th>Calories</th>
+            </tr>
+          </thead>
+          <tbody>
+            {preparedRecipe.map((item, index) => (
+              <tr key={index} className="hover text-[#878787]">
+                <th>{index + 1}</th>
+                <td>{item.recipe_name}</td>
+                <td>{item.preparing_time} minutes</td>
+                <td>{item.calories} calories</td>
+              </tr>
+            ))}
+            <tr className="text-[#878787]">
+              <td></td>
+              <td></td>
+              <td>Total Time = {totalTime} minutes</td>
+              <td>Total Calories = {totalCalories} calories</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   );
@@ -62,6 +90,11 @@ const Sidebar = ({ recipeQueue }) => {
 
 Sidebar.propTypes = {
   recipeQueue: PropTypes.array.isRequired,
+  handleRemoveRecipe: PropTypes.func.isRequired,
+  calculateTotalTimeCalories: PropTypes.func.isRequired,
+  preparedRecipe: PropTypes.array.isRequired,
+  totalTime: PropTypes.number.isRequired,
+  totalCalories: PropTypes.number.isRequired,
 };
 
 export default Sidebar;
