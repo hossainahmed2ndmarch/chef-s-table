@@ -1,7 +1,18 @@
+import { useState } from "react";
 import Recipes from "../Recipes/Recipes";
 import Sidebar from "../Sidebar/Sidebar";
 
 const Main = () => {
+  const [recipeQueue, setRecipeQueue] = useState([]);
+  const addRecipeQueue = (recipe) => {
+   const isExist = recipeQueue.find(existedRecipe=> existedRecipe.recipe_id === recipe.recipe_id)
+   if(!isExist){
+    setRecipeQueue([...recipeQueue, recipe]);
+   }
+   else{
+    alert('This recipe already exists in the queue')
+   }
+  };
   return (
     <div className="px-6 mb-24">
       {/* Our recipe section */}
@@ -17,8 +28,8 @@ const Main = () => {
         </div>
         {/* Recipes Card */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-         <Recipes></Recipes>
-         <Sidebar></Sidebar>
+          <Recipes addRecipeQueue={addRecipeQueue}></Recipes>
+          <Sidebar recipeQueue={recipeQueue}></Sidebar>
         </div>
       </section>
     </div>

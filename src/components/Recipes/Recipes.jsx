@@ -1,8 +1,9 @@
 import { FaRegClock } from "react-icons/fa6";
 import { AiOutlineFire } from "react-icons/ai";
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
-const Recipes = () => {
+const Recipes = ({ addRecipeQueue }) => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
@@ -33,7 +34,9 @@ const Recipes = () => {
             </h5>
             <ul className="p-6">
               {recipe.ingredients.map((item, index) => (
-                <li key={index} className="text-[#878787] list-disc">{item}</li>
+                <li key={index} className="text-[#878787] list-disc">
+                  {item}
+                </li>
               ))}
             </ul>
           </div>
@@ -47,13 +50,20 @@ const Recipes = () => {
               <p>{recipe.calories} calories</p>
             </div>
           </div>
-          <button className="btn bg-[#0BE58A] border-none text-xl  text-black font-semibold rounded-[50px]">
+          <button
+            onClick={()=>addRecipeQueue(recipe)}
+            className="btn bg-[#0BE58A] border-none text-xl  text-black font-semibold rounded-[50px]"
+          >
             Want to Cook
           </button>
         </div>
       ))}
     </div>
   );
+};
+
+Recipes.propTypes = {
+  addRecipeQueue: PropTypes.func.isRequired,
 };
 
 export default Recipes;
